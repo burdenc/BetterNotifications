@@ -1,0 +1,14 @@
+{{#notifications}}
+<div class="media">
+  <img class="pull-left media-object" src="{{img}}">
+  <div class="media-body">
+    <h4 class="media-heading">{{title}}</h4>
+    {{content}}
+	<p class="small-text">{{time}}</p>
+  </div>
+</div>
+<hr />
+{{/notifications}}
+{{^notifications}}
+<h4 class="empty media-heading">There are no notifications to view.</h4>
+{{/notifications}}

@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<title>Notification Center</title>
+<style>
+body {
+-moz-user-select: none;
+	user-select: none;
+}
+
+.pull-left {
+	float: left;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-right: 0px none;
+    border-width: 1px 0px 0px;
+    border-style: solid none none;
+    border-color: #EEE -moz-use-text-color -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+}
+
+hr:last-of-type {
+	display: none;
+}
+
+.media, .media-body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: #333;
+	overflow: hidden;
+}
+
+.empty {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+}
+
+.small-text {
+	margin: 0px;
+	font-size: 10px;
+	color: rgba(131, 131, 131, 1);
+}
+
+.media-heading {
+	margin: 0px;
+}
+
+.media-object {
+	margin-right: 10px;
+	width: 48px;
+	height: 48px;
+}
+</style>
+</head>
+
+<body>
+<div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="icon-32.png">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Testing</h4>
+    Testing testing testing
+	<p class="small-text">10:24:15 PM</p>
+  </div>
+</div>
+<hr />
+<div class="media">
+   <img class="pull-left media-object" src="icon-32.png">
+  <div class="media-body">
+    <h4 class="media-heading">Testing</h4>
+    Test test test
+	<p class="small-text">10:24:15 PM</p>
+  </div>
+</div>
+<hr />
+<div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="icon-32.png">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Testing</h4>
+    Test test test
+	<p class="small-text">10:24:15 PM</p>
+  </div>
+</div>
+<hr />
+</body>
+
+</html>
