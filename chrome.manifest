@@ -1,1 +1,2 @@
-override		chrome://global/content/alerts/alert.js		resources/annotator/data/alerts/alert.js
+override		chrome://global/content/alerts/alert.js		resources/better-notifications/data/alerts/alert.js
+override		chrome://global/content/alerts/alert.xul		resources/better-notifications/data/alerts/alert.xul
