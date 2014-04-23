@@ -29,7 +29,7 @@
     <box>
       <vbox id="alertImageBox" class="alertImageBox" align="center" pack="center">
         <image id="alertImage"/> <br />
-		<progressmeter id="alertProgress" value="0" style="min-width: 48px; min-height: 10px; margin-top: 10px;" />
+		<progressmeter id="alertProgress" value="0" style="min-width: 48px; min-height: 10px; margin-top: 10px; -moz-appearance: none; border: 0px;" />
       </vbox>
 
       <vbox id="alertTextBox" class="alertTextBox">
