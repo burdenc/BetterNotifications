@@ -72,6 +72,7 @@ var runningTime = 0;
 var progressInterval;
 var closeWindowTimeout;
 var clearTime;
+var progressElement;
 
 function onAlertLoad() {
   //const ALERT_DURATION_IMMEDIATE = 4000;
@@ -94,17 +95,17 @@ function onAlertLoad() {
 
   window.addEventListener("XULAlertClose", function() { window.close(); });
 
+  progressElement = document.getElementById('alertProgress');
   progressInterval = setInterval(function() {
 	runningTime += 10;
-	document.getElementById('alertProgress').setAttribute('value', (runningTime/clearTime)*100);
+	progressElement.setAttribute('value', (runningTime/clearTime)*100);
   }, 10);
   
-  //if (Services.prefs.getBoolPref("alerts.disableSlidingEffect")) {
   closeWindowTimeout = setTimeout(function() { clearInterval(progressInterval); window.close(); }, clearTime);
-    return;
-  //}
 
-  let alertBox = document.getElementById("alertBox");
+  //CSS animation is hard coded, not sure how to make it of variable time
+  
+  /*let alertBox = document.getElementById("alertBox");
   alertBox.addEventListener("animationend", function hideAlert(event) {
     if (event.animationName == "alert-animation") {
       alertBox.removeEventListener("animationend", hideAlert, false);
@@ -115,7 +116,7 @@ function onAlertLoad() {
 
   if (gAlertListener) {
     gAlertListener.observe(null, "alertshow", gAlertCookie);
-  }
+  }*/
 }
 
 function moveWindowToReplace(aReplacedAlert) {
@@ -214,7 +215,7 @@ function onAlertMouseOver() {
 function onAlertMouseOut() {
   progressInterval = setInterval(function() {
 	runningTime += 10;
-	document.getElementById('alertProgress').setAttribute('value', (runningTime/clearTime)*100);
+	progressElement.setAttribute('value', (runningTime/clearTime)*100);
   }, 10);
   closeWindowTimeout = setTimeout(function() { clearInterval(progressInterval); window.close(); }, clearTime - runningTime);
 }
