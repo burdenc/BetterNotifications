@@ -92,14 +92,20 @@ function onAlertLoad() {
   
   var currentProgress = document.getElementById('alertProgress');
   clearTime = Services.prefs.getIntPref('alerts.alertDisplayTime');
+  
+  // Stay until dismissed
+  if(clearTime == 0) {
+	currentProgress.hidden = true;
+	return;
+  }
 
   window.addEventListener("XULAlertClose", function() { window.close(); });
 
   progressElement = document.getElementById('alertProgress');
   progressInterval = setInterval(function() {
-	runningTime += 10;
+	runningTime += (1000/60);
 	progressElement.setAttribute('value', (runningTime/clearTime)*100);
-  }, 10);
+  }, 1000/60);
   
   closeWindowTimeout = setTimeout(function() { clearInterval(progressInterval); window.close(); }, clearTime);
 
@@ -208,14 +214,18 @@ function onAlertClick() {
 }
 
 function onAlertMouseOver() {
+  if(clearTime == 0) return;
+  
   clearTimeout(closeWindowTimeout);
   clearInterval(progressInterval);
 }
 
 function onAlertMouseOut() {
+  if(clearTime == 0) return;
+
   progressInterval = setInterval(function() {
-	runningTime += 10;
+	runningTime += (1000/60);
 	progressElement.setAttribute('value', (runningTime/clearTime)*100);
-  }, 10);
+  }, 1000/60);
   closeWindowTimeout = setTimeout(function() { clearInterval(progressInterval); window.close(); }, clearTime - runningTime);
 }

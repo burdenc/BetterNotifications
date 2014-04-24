@@ -5,6 +5,7 @@ Current Features
 * Widget button to show 5 most recent notifications
 * Pause notification destruction countdown while hovering over notification
 * about:config (alerts.alertDisplayTime) preference to adjust how long notifications will show before disappearing
+	* A value of zero will make notifications stay until they are dismissed
 
 Planned Features
 ---------

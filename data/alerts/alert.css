@@ -10,9 +10,25 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* Better Notifications CSS: */
+
 .progress-bar {
   -moz-appearance: none;
 }
+
+.alertProgress {
+  min-width: 48px;
+  min-height: 10px;
+  margin-top: 10px;
+  -moz-appearance: none;
+  border: 0px;
+}
+
+.alertImageBox {
+  min-width: 64px;
+}
+
+/* Default Firefox CSS: */
 
 .alertBox {
   border: 1px solid threedshadow;
