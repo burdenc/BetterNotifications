@@ -50,13 +50,15 @@ function prefillAlertInfo() {
     case 5:
       gAlertCookie = window.arguments[4];
     case 4:
-      gAlertTextClickable = window.arguments[3];
+      /*gAlertTextClickable = window.arguments[3];
       if (gAlertTextClickable) {
         document.getElementById('alertNotification').setAttribute('clickable', true);
         document.getElementById('alertTextLabel').setAttribute('clickable', true);
-      }
+      }*/
     case 3:
-      document.getElementById('alertTextLabel').textContent = window.arguments[2];
+	  console.log(text2Link(window.arguments[2]));
+	  console.log(window.arguments[2]);
+      document.getElementById('alertTextLabel').innerHTML = text2Link(window.arguments[2]);
     case 2:
       document.getElementById('alertTitleLabel').setAttribute('value', window.arguments[1]);
     case 1:
@@ -228,4 +230,12 @@ function onAlertMouseOut() {
 	progressElement.setAttribute('value', (runningTime/clearTime)*100);
   }, 1000/60);
   closeWindowTimeout = setTimeout(function() { clearInterval(progressInterval); window.close(); }, clearTime - runningTime);
+}
+
+function text2Link(text) {
+  var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  
+  return text.replace(urlRegex, function(url) {
+	return "<label href='"+url+"' class='plain alertText text-link'>"+url+"</label>";
+  }, 'g');
 }

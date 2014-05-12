@@ -3,7 +3,7 @@
   <img class="pull-left media-object" src="{{img}}">
   <div class="media-body">
     <h4 class="media-heading">{{title}}</h4>
-    {{content}}
+	{{{link2Text}}}
 	<p class="small-text">{{time}}</p>
   </div>
 </div>
