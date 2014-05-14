@@ -1,8 +1,9 @@
 {
-    "license": "GPL 3.0",
+    "license": "MPL 2.0",
     "name": "better-notifications",
-    "contributors": [],
+    "title": "Better Notifications",
+    "version": "0.1",
     "author": "Cassidy Burden",
-    "keywords": [],
-    "id": "deltaburnt-betternotif"
+    "id": "deltaburnt-betternotif",
+    "homepage": "http://github.com/deltaburnt/betternotifications"
 }
