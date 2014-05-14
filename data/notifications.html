@@ -3,6 +3,12 @@
 <head>
 <title>Notification Center</title>
 <style>
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+}
+
 .pull-left {
 	float: left;
 }
@@ -33,6 +39,10 @@ hr:last-of-type {
 	overflow: hidden;
 }
 
+.media {
+	margin: 8px;
+}
+
 .empty {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
@@ -52,6 +62,29 @@ hr:last-of-type {
 	margin-right: 10px;
 	max-width: 48px;
 	max-height: 48px;
+}
+
+.clearButton {
+	-moz-user-select: none;
+	border-top-style: solid;
+	border-top-color: rgba(229, 229, 229, 1);
+	border-top-width: 1px;
+	user-select: none;
+	background-color: rgba(246, 246, 246, 1);
+	margin: 0px;
+	position: relative;
+	bottom: -12;
+	text-align: center;
+	height: 56px;
+	line-height: 56px;
+	cursor: pointer;
+}
+
+.clearButton:hover {
+	background-color: rgba(243, 243, 243, 1);
+}
+.clearButton:active {
+	background-color: rgba(235, 235, 235, 1);
 }
 </style>
 </head>

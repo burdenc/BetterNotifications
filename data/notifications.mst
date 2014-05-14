@@ -9,6 +9,11 @@
 </div>
 <hr />
 {{/notifications}}
+{{#clearButton}}
+<div class="clearButton">
+Clear Notifications
+</div>
+{{/clearButton}}
 {{^notifications}}
-<h4 class="empty media-heading">There are no notifications to view.</h4>
+<div class="media" style="text-align: center">There are no notifications to view.</div>
 {{/notifications}}

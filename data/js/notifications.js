@@ -1,4 +1,6 @@
-var input = [];
+var view;
+var template;
+
 self.port.on('onOpen', function(inputData) {
 	//template = Mustache.parse(inputData['template']);
 	inputData['view']['link2Text'] = function() {
@@ -7,6 +9,13 @@ self.port.on('onOpen', function(inputData) {
 			return "<a href='"+url+"'>"+url+"</a>";
 		}, 'g');
 	};
+	inputData['view']['clearButton'] = function() {
+		if(this.notifications.length == 0) return;
+		return this;
+	};
+	view = inputData['view'];
+	template = inputData['template'];
+	
 	document.body.innerHTML = Mustache.render(inputData['template'], inputData['view']);
 	
 	self.port.emit('setHeight', document.body.offsetHeight);
@@ -15,4 +24,11 @@ self.port.on('onOpen', function(inputData) {
 $('body').on('click', 'a', function(event) {
 	self.port.emit('click', $(this).attr('href'));
 	event.preventDefault();
+});
+
+$('body').on('click', '.clearButton', function(event) {
+	self.port.emit('clearNotifications');
+	view['notifications'] = [];
+	document.body.innerHTML = Mustache.render(template, view);
+	self.port.emit('setHeight', document.body.offsetHeight);
 });
