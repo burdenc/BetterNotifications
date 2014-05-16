@@ -1,8 +1,12 @@
 var view;
 var template;
+var count = 0;
 
 self.port.on('onOpen', function(inputData) {
 	//template = Mustache.parse(inputData['template']);
+	document.getElementsByTagName("style")[0].innerHTML += inputData['style'];
+	console.log(inputData['style']);
+	console.log(document.getElementsByTagName("style")[0].innerHTML);
 	inputData['view']['link2Text'] = function() {
 		var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 		return this.content.replace(urlRegex, function(url) {
@@ -11,6 +15,11 @@ self.port.on('onOpen', function(inputData) {
 	};
 	inputData['view']['clearButton'] = function() {
 		if(this.notifications.length == 0) return;
+		return this;
+	};
+	inputData['view']['hrCheck'] = function() {
+		count++;
+		if(count == view.notifications.length) return;
 		return this;
 	};
 	view = inputData['view'];
