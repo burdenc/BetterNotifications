@@ -1,26 +1,19 @@
 {{#notifications}}
-<!--<div style="margin: 8px;">-->
-<div style="display: table; margin: 8px;">
-	<div class="media" style="display:table-cell; width: 100%;">
-	  <img class="pull-left media-object" src="{{img}}">
-	  <div class="media-body">
-		<h4 class="media-heading">{{title}}</h4>
-		{{{link2Text}}}
-		<p class="small-text">{{time}}</p>
-	  </div>
-	</div>
-	<div style="display:table-cell; vertical-align:middle;">
-	<div class="x-button"></div>
-	</div>
+<div class="media">
+  <img class="pull-left media-object" src="{{img}}">
+  <div class="media-body">
+    <h4 class="media-heading">{{title}}</h4>
+	{{{link2Text}}}
+	<p class="small-text">{{time}}</p>
+  </div>
 </div>
 <hr />
 {{/notifications}}
-
 {{#clearButton}}
-<div class="clearButton button">
+<div class="clearButton">
 Clear Notifications
 </div>
 {{/clearButton}}
 {{^notifications}}
-<div class="media" style="text-align: center; -moz-user-select: none;">There are no notifications to view.</div>
+<div class="media" style="text-align: center">There are no notifications to view.</div>
 {{/notifications}}
