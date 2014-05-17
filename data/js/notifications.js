@@ -26,7 +26,7 @@ $('body').on('click', 'a', function(event) {
 	event.preventDefault();
 });
 
-$('body').on('click', '.clearButton', function(event) {
+$('body').on('click', '#clear', function(event) {
 	self.port.emit('clearNotifications');
 	view['notifications'] = [];
 	document.body.innerHTML = Mustache.render(template, view);

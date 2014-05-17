@@ -64,24 +64,44 @@ hr:last-of-type {
 	max-height: 48px;
 }
 
-.clearButton {
+.buttonDiv {
+	padding: 0px;
+	margin: 0px;
+	display: table;
+	width: 100%;
+}
+
+.button {
+	display: table-cell;
 	-moz-user-select: none;
+	border: none;
 	border-top-style: solid;
 	border-top-color: rgba(229, 229, 229, 1);
 	border-top-width: 1px;
 	user-select: none;
 	background-color: rgba(246, 246, 246, 1);
 	margin: 0px;
+	padding: 0px;
 	text-align: center;
 	height: 56px;
 	line-height: 56px;
 	cursor: pointer;
 }
 
-.clearButton:hover {
+#clear {
+	width: 80%;
+	border-right-style: solid;
+	border-right-color: rgba(229, 229, 229, 1);
+	border-right-width: 1px;
+	border-left-style: solid;
+	border-left-color: rgba(229, 229, 229, 1);
+	border-left-width: 1px;
+}
+
+.button:hover {
 	background-color: rgba(243, 243, 243, 1);
 }
-.clearButton:active {
+.button:active {
 	background-color: rgba(235, 235, 235, 1);
 }
 </style>

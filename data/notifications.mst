@@ -10,8 +10,8 @@
 <hr />
 {{/notifications}}
 {{#clearButton}}
-<div class="clearButton">
-Clear Notifications
+<div class="buttonDiv">
+<div class="button" style="width:10%"><</div><div class="button" id="clear">Clear Notifications</div><div class="button" style="width:10%">></div>
 </div>
 {{/clearButton}}
 {{^notifications}}
