@@ -16,7 +16,7 @@
 </div>
 
 <div class="buttonDiv">
-<div class="button" style="width:10%" id="prev"><</div><div class="button" id="clear">Clear Notifications</div><div class="button" style="width:10%" id="next">></div>
+{{#showPrev}}<div class="button" style="width:10%" id="prev"><</div>{{/showPrev}}<div class="button" id="clear">Clear Notifications</div>{{#showNext}}<div class="button" style="width:10%" id="next">></div>{{/showNext}}
 </div>
 {{/haveNotifications}}
 
