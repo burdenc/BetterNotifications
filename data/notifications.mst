@@ -1,3 +1,6 @@
+{{#haveNotifications}}
+<div id="notifications">
+
 {{#notifications}}
 <div class="media">
   <img class="pull-left media-object" src="{{img}}">
@@ -9,11 +12,14 @@
 </div>
 <hr />
 {{/notifications}}
-{{#clearButton}}
-<div class="buttonDiv">
-<div class="button" style="width:10%"><</div><div class="button" id="clear">Clear Notifications</div><div class="button" style="width:10%">></div>
+
 </div>
-{{/clearButton}}
+
+<div class="buttonDiv">
+<div class="button" style="width:10%" id="prev"><</div><div class="button" id="clear">Clear Notifications</div><div class="button" style="width:10%" id="next">></div>
+</div>
+{{/haveNotifications}}
+
 {{^notifications}}
 <div class="media" style="text-align: center">There are no notifications to view.</div>
 {{/notifications}}
