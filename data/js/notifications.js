@@ -5,12 +5,18 @@ var pageIndex;
 
 self.port.on('onOpen', function(inputData) {
 	pageIndex = 0;
-	//template = Mustache.parse(inputData['template']);
+	template = inputData['template'];
+	notifications = inputData['notifications'];
+	
 	view['link2Text'] = function() {
 		var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 		return this.content.replace(urlRegex, function(url) {
 			return "<a href='"+url+"'>"+url+"</a>";
 		}, 'g');
+	};
+	view['pages'] = function() {
+			if(notifications.length <= 5) return;
+			return '<div class="small-text pages">Page '+(pageIndex+1)+'/'+(Math.floor(notifications.length/5)+1)+'</div>';
 	};
 	view['haveNotifications'] = function() {
 		if(this.notifications.length == 0) return;
@@ -24,8 +30,6 @@ self.port.on('onOpen', function(inputData) {
 		if((pageIndex + 1) * 5 < notifications.length) return this;
 		return;
 	};
-	template = inputData['template'];
-	notifications = inputData['notifications'];
 	
 	reDraw();
 });
