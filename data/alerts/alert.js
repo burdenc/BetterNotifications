@@ -11,6 +11,8 @@ const Cc = Components.classes;
 
 var windowMediator = Cc["@mozilla.org/appshell/window-mediator;1"]
                        .getService(Ci.nsIWindowMediator);
+var observerService = Cc["@mozilla.org/observer-service;1"]
+                       .getService(Ci.nsIObserverService);
 
 // Copied from nsILookAndFeel.h, see comments on eMetric_AlertNotificationOrigin
 const NS_ALERT_HORIZONTAL = 1;
@@ -76,7 +78,26 @@ var closeWindowTimeout;
 var clearTime;
 var progressElement;
 
+function selectImage() {
+	var image = window.arguments[0];
+	//Image applied via CSS (most likely stored in chrome)
+	if(!image) {
+		var imageElem = window.document.getElementById('alertImage');
+		var style = window.getComputedStyle(imageElem);
+		image = style.listStyleImage || style.backgroundImage;
+		image = image.slice(5, -2);
+	}
+	return image;
+}
+
 function onAlertLoad() {
+  observerService.notifyObservers(null, "notification-creation", JSON.stringify(
+  {
+	"image":selectImage(),
+	"title":window.arguments[1],
+	"text":window.arguments[2]
+  }));
+
   //const ALERT_DURATION_IMMEDIATE = 4000;
   let alertTextBox = document.getElementById("alertTextBox");
   let alertImageBox = document.getElementById("alertImageBox");
