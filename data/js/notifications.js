@@ -16,7 +16,7 @@ self.port.on('onOpen', function(inputData) {
 	};
 	view['pages'] = function() {
 			if(notifications.length <= 5) return;
-			return '<div class="small-text pages">Page '+(pageIndex+1)+'/'+(Math.floor(notifications.length/5)+1)+'</div>';
+			return '<div class="small-text pages">Page '+(pageIndex+1)+'/'+(Math.ceil(notifications.length/5))+'</div>';
 	};
 	view['haveNotifications'] = function() {
 		if(this.notifications.length == 0) return;
