@@ -2,8 +2,25 @@
     "license": "MPL 2.0",
     "name": "better-notifications",
     "title": "Better Notifications",
-    "version": "0.1",
+    "version": "0.2",
     "author": "Cassidy Burden",
     "id": "deltaburnt-betternotif",
-    "homepage": "http://github.com/deltaburnt/betternotifications"
+    "homepage": "http://github.com/deltaburnt/betternotifications",
+	"preferences-branch": "alerts",
+	"preferences": [
+	{
+		"description": "Enable/disable saving of notifications in notification center.",
+		"title": "Enable Notification Center",
+		"type": "bool",
+		"value": true,
+		"name": "enableNotifCenter"
+	},
+	{
+		"description": "Time (in milliseconds) that notifications display for.",
+		"title": "Notification Display Time",
+		"type": "integer",
+		"value": 4000,
+		"name": "alertDisplayTime"
+	}
+	]
 }

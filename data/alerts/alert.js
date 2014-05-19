@@ -114,7 +114,7 @@ function onAlertLoad() {
   }
   
   var currentProgress = document.getElementById('alertProgress');
-  clearTime = Services.prefs.getIntPref('alerts.alertDisplayTime');
+  clearTime = Services.prefs.getIntPref('extensions.alerts.alertDisplayTime');
   
   // Stay until dismissed
   if(clearTime == 0) {
