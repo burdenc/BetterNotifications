@@ -58,8 +58,6 @@ function prefillAlertInfo() {
         document.getElementById('alertTextLabel').setAttribute('clickable', true);
       }*/
     case 3:
-	  console.log(text2Link(window.arguments[2]));
-	  console.log(window.arguments[2]);
       document.getElementById('alertTextLabel').innerHTML = text2Link(window.arguments[2]);
     case 2:
       document.getElementById('alertTitleLabel').setAttribute('value', window.arguments[1]);
@@ -114,7 +112,7 @@ function onAlertLoad() {
   }
   
   var currentProgress = document.getElementById('alertProgress');
-  clearTime = Services.prefs.getIntPref('extensions.alerts.alertDisplayTime');
+  clearTime = Services.prefs.getIntPref('extensions.alerts.alert_display_time');
   
   // Stay until dismissed
   if(clearTime == 0) {

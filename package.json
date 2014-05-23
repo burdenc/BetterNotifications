@@ -13,14 +13,21 @@
 		"title": "Enable Notification Center",
 		"type": "bool",
 		"value": true,
-		"name": "enableNotifCenter"
+		"name": "notif_center.enabled"
 	},
 	{
-		"description": "Time (in milliseconds) that notifications display for.",
+		"description": "Time (in milliseconds) that notifications display for. A value of zero will mean notifications will display until you click them.",
 		"title": "Notification Display Time",
 		"type": "integer",
 		"value": 4000,
-		"name": "alertDisplayTime"
+		"name": "alert_display_time"
+	},
+	{
+		"description": "Number of notifications to display per page in notification center. A value of zero will mean all notifications will display on the same page.",
+		"title": "Notifications Per Page",
+		"type": "integer",
+		"value": 5,
+		"name": "notif_center.per_page"
 	}
 	]
 }
