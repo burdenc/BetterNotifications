@@ -95,7 +95,7 @@ function onAlertLoad() {
 	"title":window.arguments[1],
 	"text":window.arguments[2]
   }));
-
+  
   //const ALERT_DURATION_IMMEDIATE = 4000;
   let alertTextBox = document.getElementById("alertTextBox");
   let alertImageBox = document.getElementById("alertImageBox");
@@ -227,7 +227,7 @@ function onAlertBeforeUnload() {
 }
 
 function onAlertClick() {
-  if (gAlertListener && gAlertTextClickable) {
+  if (gAlertListener) {
     gAlertListener.observe(null, "alertclickcallback", gAlertCookie);
   }
 

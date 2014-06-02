@@ -1,6 +1,6 @@
 This is an extension for Firefox that enhances HTML5/Desktop Notifications.
 
-Precompiled XPI: http://puu.sh/98o58/3944e9501f.xpi (May 30th Compile)
+Precompiled XPI: http://puu.sh/9bjbn/db1f0745aa.xpi (June 1st Compile)
 
 Current Features
 ---------
